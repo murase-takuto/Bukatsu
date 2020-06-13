@@ -24,7 +24,7 @@ class UserTableSeeder extends Seeder
             'accepted' => 1,
         ]);
         $user->assignRole('admin');
-        
+
         // manager
         $user = User::create([
             'name'     => 'マネージャー大森',
@@ -37,7 +37,7 @@ class UserTableSeeder extends Seeder
             'accepted' => 1,
         ]);
         $user->assignRole('manager');
-        
+
         // staff
         $user = User::create([
             'name'     => 'スタッフ　花子',
