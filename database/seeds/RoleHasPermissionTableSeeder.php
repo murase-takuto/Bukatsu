@@ -20,7 +20,7 @@ class RoleHasPermissionTableSeeder extends Seeder
         ];
         $role = Role::findByName('admin');
         $role->givePermissionTo($permissions);
-        
+
         // manager
         $permissions = [
             'manager_permission',
@@ -28,7 +28,7 @@ class RoleHasPermissionTableSeeder extends Seeder
         ];
         $role = Role::findByName('manager');
         $role->givePermissionTo($permissions);
-        
+
         // staff
         $permissions = [
             'player_permission',
