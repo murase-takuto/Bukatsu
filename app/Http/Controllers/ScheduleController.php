@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use \App\User;
+use \App\Club;
+use \App\Schedule;
 
 class ScheduleController extends Controller
 {
@@ -13,7 +17,10 @@ class ScheduleController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::user();
+        $club = Club::find($user->club_id);
+        $schedules = Schedule::where('club_id', $club->id)->get();
+        return view('index', compact('user', 'club', 'schedules'));
     }
 
     /**

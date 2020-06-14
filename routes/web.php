@@ -29,11 +29,11 @@ Route::group(['middleware' => ['auth']], function() {
     // 「ログイン」かつ「manager_permissionを持つ」時のみアクセス可能
     Route::group(['middleware' => ['permission:manager_permission']], function () {
         Route::resource('managers', 'ManagerController');
-        Route::resource('schedules', 'ScheduleController');
-        Route::resource('clubs', 'ClubController');
     });
     // 「ログイン」かつ「player_permissionを持つ」時のみアクセス可能
     Route::group(['middleware' => ['permission:player_permission']], function () {
         Route::resource('users', 'UserController');
+        Route::resource('schedules', 'ScheduleController');
+        Route::resource('clubs', 'ClubController');
     });
 });

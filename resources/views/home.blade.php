@@ -39,6 +39,7 @@
                             あなたのロールは player です<br>
                         @endrole                    
                     </p>
+                    <a href="{{ route('schedules.index') }}">スケジュール一覧へ</a>
                 </div>
             </div>
         </div>
