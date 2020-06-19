@@ -23,21 +23,21 @@
                         @endcan
 
                         @can('player_permission')
-                         player_permission を持っています <br>
+                            player_permission を持っています <br>
                         @endcan
                     </p>
                     <p>
                         @role('admin')
                             あなたのロールは admin です<br>
-                        @endrole                    
+                        @endrole
 
                         @role('manager')
                             あなたのロールは manager です<br>
-                        @endrole                    
+                        @endrole
 
                         @role('player')
                             あなたのロールは player です<br>
-                        @endrole                    
+                        @endrole
                     </p>
                     <a href="{{ route('schedules.index') }}">スケジュール一覧へ</a>
                 </div>
