@@ -21,6 +21,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('login/{provider}',          'Auth\SocialAccountController@redirectToProvider');
+Route::get('login/{provider}/callback', 'Auth\SocialAccountController@handleProviderCallback');
+
 Route::group(['middleware' => ['auth']], function() {
     // 「ログイン」かつ「admin_permissionを持つ」時のみアクセス可能
     Route::group(['middleware' => ['permission:admin_permission']], function () {

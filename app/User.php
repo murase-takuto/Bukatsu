@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'line_token', 'club_id', 'team_id', 'gread_id' 
+        'name', 'email', 'password', 'line_token', 'club_id', 'team_id', 'gread_id',
     ];
 
     /**
@@ -38,4 +38,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function accounts(){
+        return $this->hasMany('App\LinkedSocialAccount');
+    }
 }
