@@ -65,6 +65,7 @@
                             </div>
                         </div>
                     </form>
+                    <a href="{{ url('/login/line') }}"  class="btn btn-default btn-md">Login with LINE</a>
                 </div>
             </div>
         </div>
