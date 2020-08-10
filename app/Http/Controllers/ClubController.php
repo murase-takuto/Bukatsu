@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\Club;
+use \App\User;
+use Illuminate\Support\Facades\Auth;
 
 class ClubController extends Controller
 {
@@ -23,7 +26,7 @@ class ClubController extends Controller
      */
     public function create()
     {
-        //
+        return view('club.add');
     }
 
     /**
@@ -34,7 +37,16 @@ class ClubController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $club = Club::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'tel' => $request->tel,
+        ]);
+        $user = User::update([
+            'club_id' => $club->id,
+        ]);
+        Auth::user()->givePermissionTo('manager_permission');
+        return redirect()->route('schedules.index');
     }
 
     /**

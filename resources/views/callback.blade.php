@@ -38,17 +38,11 @@
             .content {
                 text-align: center;
             }
-            .title {
-                font-size: 84px;
-            }
             .links > a {
-                display: inline-block;
-                color: #fff;
-                background-color: #00B900;
-                padding: 15px 25px;
+                color: #636b6f;
+                padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
-                border-radius: 8px;
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
@@ -62,12 +56,10 @@
         <div class="flex-center position-ref full-height">
 
             <div class="content">
-                <div class="title m-b-md">
-                    LINE LOGIN
-                </div>
 
                 <div class="links">
-                    <a href="{{ route('linelogin') }}">LINEログイン</a>
+                    <p>ユーザーID: {{$profile->userId}}</p>
+                    <p>名前: {{$profile->displayName}}</p>
                 </div>
             </div>
         </div>

@@ -40,6 +40,10 @@
                         @endrole
                     </p>
                     <a href="{{ route('schedules.index') }}">スケジュール一覧へ</a>
+                    <br>
+                    <a href="#">チームに参加する</a>
+                    <br>
+                    <a href="{{ route('clubs.create') }}">チームを作成する</a>
                 </div>
             </div>
         </div>
