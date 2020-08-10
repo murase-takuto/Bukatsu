@@ -18,11 +18,12 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
+Route::get('/linelogin', 'LineLoginController@lineLogin')->name('linelogin');
+Route::get('/login/line/callback', 'LineLoginController@callback')->name('callback');
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('login/{provider}',          'Auth\SocialAccountController@redirectToProvider');
-Route::get('login/{provider}/callback', 'Auth\SocialAccountController@handleProviderCallback');
+//Route::get('login/{provider}',          'Auth\SocialAccountController@redirectToProvider');
+//Route::get('login/{provider}/callback', 'Auth\SocialAccountController@handleProviderCallback');
 
 Route::group(['middleware' => ['auth']], function() {
     // 「ログイン」かつ「admin_permissionを持つ」時のみアクセス可能
@@ -39,4 +40,7 @@ Route::group(['middleware' => ['auth']], function() {
         Route::resource('schedules', 'ScheduleController');
         Route::resource('clubs', 'ClubController');
     });
+    Route::resource('users', 'UserController');
+    Route::resource('schedules', 'ScheduleController');
+    Route::resource('clubs', 'ClubController');
 });
